@@ -1,9 +1,13 @@
 import torch
+from netCDF4 import Dataset
+f = Dataset('/home/shipmaal/SWOT-ML/MissouriUpstream.nc')
+print(f)
 
 # setting device on GPU if available, else CPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print('Using device:', device)
 print()
+
 
 # Additional Info when using cuda
 if device.type == 'cuda':
@@ -12,3 +16,5 @@ if device.type == 'cuda':
     print('Allocated:', round(torch.cuda.memory_allocated(0) / 1024 ** 3, 1), 'GB')
     print('Cached:   ', round(torch.cuda.memory_reserved(0) / 1024 ** 3, 1), 'GB')
     print('yay')
+
+
