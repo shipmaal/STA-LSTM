@@ -12,4 +12,4 @@ with xr.open_dataset(filepath, group='Reach_Timeseries') as ds:
     surface_slop = ds.A
 
 
-print(width.values)
+
